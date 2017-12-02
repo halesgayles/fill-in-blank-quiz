@@ -49,22 +49,22 @@ def check_answer(user_answer, answers, answer_index):
 def quiz():
     # prompts user for level of difficulty
     level = raw_input("Choose your level. Easy, Medium or Hard?")
-    difficulty = get_difficulty(level)
+    question = get_difficulty(level)
 
-    answers = answer_set(difficulty)
+    answers = answer_set(question)
 
     blank_index = 0
     answer_index = 0
 
     while blank_index < len(blanks):
-        print difficulty
+        print question
 
         user_answer = raw_input("What goes in " + blanks[blank_index] + "?")
 
         if check_answer(user_answer, answers, answer_index) == "correct":
             print "Correct!"
 
-            difficulty = difficulty.replace(blanks[blank_index], user_answer)
+            question = question.replace(blanks[blank_index], user_answer)
 
             blank_index += 1
             answer_index += 1
@@ -72,6 +72,12 @@ def quiz():
         else:
             while check_answer(user_answer, answers, answer_index) == "incorrect":
                 user_answer = raw_input("That wasn't correct! Let's try again.")
+            print "Correct!"
+
+            question = question.replace(blanks[blank_index], user_answer)
+
+            blank_index += 1
+            answer_index += 1
 
     print "Congratulations and thanks for taking this quiz!"
 
