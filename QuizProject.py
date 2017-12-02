@@ -14,7 +14,6 @@ blanks = ["__1__", "__2__", "__3__", "__4__"]
 def get_difficulty(level):
     while level not in difficulty_options:
         level = raw_input("Sorry! You didn't correctly enter a difficulty. Try again!")
-        return level
 
     if level == difficulty_options[0]:
         return easy_question
@@ -70,11 +69,11 @@ def quiz():
             blank_index += 1
             answer_index += 1
 
-        while check_answer(user_answer, answers, answer_index) == "incorrect":
-            user_answer = raw_input("That wasn't correct! Let's try again.")
-            return user_answer
+        else:
+            while check_answer(user_answer, answers, answer_index) == "incorrect":
+                user_answer = raw_input("That wasn't correct! Let's try again.")
 
     print "Congratulations and thanks for taking this quiz!"
 
 
-print quiz()
+quiz()
