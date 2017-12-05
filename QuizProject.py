@@ -1,12 +1,21 @@
 difficulty_options = ["Easy", "Medium", "Hard"]
 
-easy_question = "this is __1__ __2__ __3__ __4__"
-med_question = "this is medium"
-hard_question = "this is hard"
+easy_question = "The competitive mode that has 3 lanes is called __1__. \n" \
+                "The mode that gives random gods/goddesses and only has one lane with no backing is called __2__. \n" \
+                "The mode that has two lanes with a large jungle in the middle is called__3__. \n" \
+                "The mode that has a colosseum map and counts down tickets is called __4__."
+med_question = "The pantheon that includes gods such as Loki, Thor, and Odin is __1__. \n" \
+               "The pantheon that includes Athena, Aphrodite, and Zeus is __2__.\n" \
+               "The pantheon that includes Chang'e, Hou Yi, and Ne Zha is __3__. \n" \
+               "The pantheon that includes Ra, Bastet, and Neith is __4__"
+hard_question = "__1__ ultimate ability is called No Escape which chains enemies and pulls them to him with a stun.\n" \
+                "__2__ ultimate ability is called Pillar of Agony which pulls enemies in a radius closer to him and does damage.\n" \
+                "__3__ ultimate ability is called Sunbreaker which sends the nine suns crashing down dealing damage to enemies.\n" \
+                "__4__ ultimate ability is called Hovering Death in which he can take to the skies and execute an enemy if their health is low enough."
 
-easy_answers = ["e", "a", "s", "y"]
-med_answers = ["med answer"]
-hard_answers = ["hard answer"]
+easy_answers = ["conquest", "assault", "siege", "arena"]
+med_answers = ["Norse", "Greek", "Chinese", "Egyptian"]
+hard_answers = ["Ares", "Hades", "Hou Yi", "Thanatos"]
 
 blanks = ["__1__", "__2__", "__3__", "__4__"]
 
@@ -26,14 +35,14 @@ def get_difficulty(level):
 
 
 # gets level appropriate answer set
-def answer_set(difficulty):
-    if difficulty == easy_question:
+def answer_set(question):
+    if question == easy_question:
         return easy_answers
 
-    if difficulty == med_question:
+    if question == med_question:
         return med_answers
 
-    if difficulty == hard_question:
+    if question == hard_question:
         return hard_answers
 
 
