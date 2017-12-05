@@ -20,6 +20,7 @@ hard_answers = ["Ares", "Hades", "Hou Yi", "Thanatos"]
 blanks = ["__1__", "__2__", "__3__", "__4__"]
 
 
+# gets the users difficulty and returns the question set
 def get_difficulty(level):
     while level not in difficulty_options:
         level = raw_input("Sorry! You didn't correctly enter a difficulty. Try again!")
