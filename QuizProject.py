@@ -25,13 +25,13 @@ def get_difficulty(level):
     while level not in difficulty_options:
         level = raw_input("Sorry! You didn't correctly enter a difficulty. Try again!")
 
-    if level == difficulty_options[0]:
+    if level == "Easy":
         return easy_question
 
-    if level == difficulty_options[1]:
+    if level == "Medium":
         return med_question
 
-    if level == difficulty_options[2]:
+    if level == "Hard":
         return hard_question
 
 
